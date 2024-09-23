@@ -1,0 +1,15 @@
+name: sentiment_analysis
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12.5
+  - beautifulsoup4=4.11.2
+  - google=3.0.0
+  - matplotlib=3.7.1
+  - nltk=3.9.1
+  - numpy=1.24.3
+  - pandas=2.0.2
+  - plotly=5.24.1
+  - Requests=2.32.3
+  - textblob=0.18.0.post0

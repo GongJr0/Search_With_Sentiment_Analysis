@@ -58,7 +58,7 @@ class Sentiment:
     @staticmethod
     def moving_average_sentiment(group: TextGroup, window: int = 500, 
                                  plot: bool = False, 
-                                 plot_engine: Literal['pyplot', 'plotly'] = 'pyplot', 
+                                 plot_engine: Literal['pyplot', 'plotly', None] = 'pyplot', 
                                  story_title: Optional[str] = None) -> Optional[List[floating]]:
         """Calculate the moving average sentiment of a group of texts.
 
