@@ -1,5 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-# Ignore .ipynb from linguist
+#Ignore .ipynb files from Linguist auto-detection
 *.ipynb linguist-vendored
