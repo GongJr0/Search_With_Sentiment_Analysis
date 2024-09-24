@@ -8,11 +8,21 @@ from _class.types import Url, Result, ResultSeries, UrlText, TextGroup
 import nltk # type: ignore
 
 class Scrape:
+    """Class to scrape text from a URL using BeautifulSoup.
+    """
     def __init__(self) -> None:
         pass
     
     @classmethod
     def get_text(cls, url: Url) -> UrlText:
+        """Scrape text from a URL using BeautifulSoup. Only paragraphs (<p>) are considered.
+
+        Args:
+            url (Url): URL to scrape text from
+
+        Returns:
+            UrlText: Text scraped from the URL
+        """
         try:
             response = requests.get(url)
             
@@ -39,8 +49,15 @@ class Scrape:
     
     @staticmethod
     def textify_results(result: Union[Result, ResultSeries]) -> TextGroup:
+        """Convert a list of URLs to a list of scraped text.
+
+        Args:
+            result (Union[Result, ResultSeries]): List of URLs to scrape text from
+        Returns:
+            TextGroup: List of scraped text
+        """
         out: TextGroup = [Scrape.get_text(url) for url in result]
         return out
     
  
-    STOPWORDS: List[str] = nltk.corpus.stopwords.words('english')
+    STOPWORDS: List[str] = nltk.corpus.stopwords.words('english') # Standardized words to remove from text before NLP analysis
